@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末游去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <li class="item" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
         </div>
@@ -32,10 +32,11 @@ export default {
     text-indent: .2rem
   .item
     overflow: hidden
+    margin-bottom: .2rem
     .item-img-wrapper
       overflow: hidden
       height: 0
-      padding-bottom: 33.9%
+      padding-bottom: 38%
       .item-img
         display: block
         width: 100%
@@ -43,7 +44,7 @@ export default {
       min-width: 0
       padding: .1rem
       .item-title
-        line-height: .6rem
+        line-height: .54rem
         font-size: .32rem
         ellipsis()
       .item-desc

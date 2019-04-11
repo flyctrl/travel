@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'Recommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        title: '杭州野生动物世界',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201405/27/8211cadd5d9fefeaa044c5b7eefc695d.jpg_200x200_38791bd1.jpg',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '002',
-        title: '杭州野生动物世界',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201405/27/8211cadd5d9fefeaa044c5b7eefc695d.jpg_200x200_38791bd1.jpg',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }, {
-        id: '003',
-        title: '杭州野生动物世界',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201405/27/8211cadd5d9fefeaa044c5b7eefc695d.jpg_200x200_38791bd1.jpg',
-        desc: '杭州，前世今生与你有一场美丽约会'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

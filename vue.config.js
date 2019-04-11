@@ -10,5 +10,17 @@ module.exports = {
       .set('Assets', resolve('src/assets'))
       .set('Components', resolve('src/components'))
       .set('Styles', resolve('src/assets/styles'))
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/static/mock'
+        }
+      }
+    }
   }
 }

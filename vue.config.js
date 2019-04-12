@@ -8,7 +8,7 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
       .set('Assets', resolve('src/assets'))
-      .set('Components', resolve('src/components'))
+      .set('Common', resolve('src/common'))
       .set('Styles', resolve('src/assets/styles'))
   },
   devServer: {

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
@@ -27,12 +28,14 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
       weekendList: []
     }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     getHomeInfo () {
@@ -42,7 +45,6 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         let data = res.data
-        this.city = data.city
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList

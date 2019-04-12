@@ -52,7 +52,8 @@ export default {
       .down-icon
         margin-left: -.05rem
         font-size: .14rem
-      width: 1.24rem
+      min-width: 1.04rem
+      padding: 0 .1rem
       float: right
       text-align: center
       color: #fff

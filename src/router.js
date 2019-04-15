@@ -23,5 +23,8 @@ export default new Router({
       name: 'detail',
       component: () => import(/* webpackChunkName: "detail" */ '@/pages/detail/Detail.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

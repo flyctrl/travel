@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from 'Utils/api'
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
@@ -26,22 +26,16 @@ export default {
   },
   methods: {
     getDetailInfo () {
-      axios.get('/api/detail.json', {
-        params: {
-          id: this.$route.params.id
-        }
+      api.Common.getDetail({
+        id: this.$route.params.id
       }).then(this.getDetailInfoSucc)
     },
-    getDetailInfoSucc (res) {
-      res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        console.log(data)
-        this.bannerImg = data.bannerImg
-        this.list = data.categoryList
-        this.gallaryImgs = data.gallaryImgs
-        this.sightName = data.sightName
-      }
+    getDetailInfoSucc (data) {
+      console.log(data)
+      this.bannerImg = data.bannerImg
+      this.list = data.categoryList
+      this.gallaryImgs = data.gallaryImgs
+      this.sightName = data.sightName
     }
   },
   data () {

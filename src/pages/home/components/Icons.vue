@@ -2,7 +2,7 @@
   <div class="icons">
     <swiper :options="swiperOption" v-if="iconShow">
       <swiper-slide v-for="(page, index) of pages" :key="index">
-        <div class="icon" v-for="item of page">
+        <div class="icon" v-for="(item, index) of page" :key="index">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" />
           </div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "HeaderIcons",
+  name: 'HeaderIcons',
   props: {
     list: Array
   },
@@ -32,7 +32,7 @@ export default {
       let pages = []
       this.list.forEach((item, index) => {
         let page = Math.floor(index / 8)
-        if(!pages[page]) {
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)

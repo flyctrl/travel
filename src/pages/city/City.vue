@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from 'Utils/api'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
@@ -31,16 +31,12 @@ export default {
   },
   methods: {
     getCityInfo () {
-      axios.get('/api/city.json').then(this.getCityInfoSucc)
+      api.Common.getCity({}).then(this.getCityInfoSucc)
     },
-    getCityInfoSucc (res) {
-      res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        console.log(data)
-        this.cities = data.cities
-        this.hotCities = data.hotCities
-      }
+    getCityInfoSucc (data) {
+      console.log(data)
+      this.cities = data.cities
+      this.hotCities = data.hotCities
     },
     handleLetterChange (letter) {
       this.letter = letter

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "FadeAnimation"
+  name: 'FadeAnimation'
 }
 </script>
 
